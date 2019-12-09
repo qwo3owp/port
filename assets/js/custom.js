@@ -1,5 +1,98 @@
+$(function(){
+	imagesProgress(); //이미지 로딩 소스
+	counter();
+});
 
-//counter
+//skrollr
+var s = skrollr.init({
+	edgeStrategy: 'set',
+	easing: 'linear'
+});
+
+//loading
+var inputs = $(".loading-bar").find($("p") );
+for(var i =0 ; i< inputs.length; i ++)
+{ 
+	var index = i +1;
+	var time = ((inputs.length)-i ) * 50;
+	$(".loading-bar p:nth-child("+index+")").css( "animation", "anim 3s "+time+"ms infinite ease-in-out" );
+}
+
+//nav button
+$('.btn_wrap').click(function(){
+	$('#nav').toggleClass('on');
+
+});
+
+//eff06 - mouse animation
+
+let wrapper = document.querySelector('.eff06 .code_box');
+
+let onMouseMove = ({clientX}) => {
+	let x = (clientX / innerWidth - 0.8 ) * (innerWidth / 2)
+
+	TweenLite.to('.first_name .text_name, .second_name .text_name', 1, {
+		x: x,
+		ease: Sine.easeOut
+	})
+}
+wrapper.addEventListener('mousemove', onMouseMove)
+
+
+//contact star click
+$('.click').click(function(){
+	$('.contact').stop().fadeToggle();
+});
+$('.close').click(function(){
+	$('.contact').stop().fadeOut();
+});
+
+
+//scroll text
+$(window).scroll(function(){
+
+	let wScroll = $(this).scrollTop();
+	//console.log(wScroll);				
+
+	$(".scroll_top").text(wScroll);
+
+	if(wScroll > $("#section2").offset().top - $(window).height()/2 ){
+		$("#section2").addClass("show");
+	}
+
+	if(wScroll > $(".sec3 .right_box > div").eq(0).offset().top + $(window).height()/3 ){
+		$("#section3 .box01").fadeOut(500);
+	}else {
+		$("#section3 .box01").fadeIn(500);
+	} 
+
+	if(wScroll > $(".sec3 .right_box > div").eq(1).offset().top + $(window).height()/3 ){
+		$("#section3 .box02").fadeOut(500);
+	} else {
+		$("#section3 .box02").fadeIn(500);
+	} 
+
+	if(wScroll > $(".sec3 .right_box > div").eq(2).offset().top + $(window).height()/3 ){
+		$("#section3 .box03").fadeOut(500);
+	} else {
+		$("#section3 .box03").fadeIn(500);
+	} 
+
+	if(wScroll > $(".sec3 .right_box > div").eq(3).offset().top + $(window).height()/2 ){
+		$("#section3 .box04").fadeOut(500);
+	} else {
+		$("#section3 .box04").fadeIn(500);
+	} 
+
+	if(wScroll > $("#section6").offset().top - $(window).height()/2 ){
+		$("#section6").addClass("show");
+		$("#footer").addClass("show");
+	}
+
+});
+
+
+// skill counter
 function counter() {
     if ($('.skill .count').size()) {
         $c = $('.skill .count');
@@ -78,8 +171,6 @@ function counter() {
         }).triggerHandler('scroll');
     }
 }
-
-
 
 //imageProgress
 function imagesProgress(){
