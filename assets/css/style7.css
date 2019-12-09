@@ -331,9 +331,9 @@ body.active #section1 .sec1 .detail {opacity: 1;}
 
 /* sec4 */
 
-#section4 {background-color: #fff; width: 100%; height: calc(4400px + 100vh); overflow: hidden; position: relative;}
+#section4 {background-color: #fff; width: 100%; height: calc(4400.2px + 100vh); overflow: hidden; position: relative;}
 #section4 .container{height: 100%;}
-.sec4 {width: 5021px; height: 100vh;}
+.sec4 {width: 5038px; height: 100vh;}
 
 .sec4 > div {height: 100%; border-right: 1px solid rgba(26,26,26,.25);}
 .sec4 .eff_title {
@@ -363,9 +363,12 @@ body.active #section1 .sec1 .detail {opacity: 1;}
 }
 
 .sec4 .eff_box .box_text {position: absolute; top: 0; right: 0; transition: all .5s ease; width: 369px; padding: 0 15px;}
-.sec4 .eff_box .box_text > p {color: rgb(229, 229, 229); font-size: 100px; font-weight: bold; margin: 55px 0 158px; transform: translate(0px,0px); transition: all .5s ease;}
+.sec4 .eff_box .box_text > p {
+	color: rgb(229, 229, 229); font-size: 180px; font-weight: 500; font-family: 'Teko', sans-serif; line-height: 140px;
+	margin: 8vh 0 13vh; transform: translate(0px,0px); transition: all .5s ease;
+}
 .sec4 .eff_box .box_text > h3 {font-size: 20px; font-family: 'S-CoreDream-2ExtraLight'; font-weight: bold;}
-.sec4 .eff_box .box_text > div {width: 330px; font-size: 13px; line-height: 21px; margin: 40px 0 27px;}
+.sec4 .eff_box .box_text > div {width: 330px; font-size: 13px; line-height: 21px; margin: 4vh 0 2vh;}
 
 
 .sec4 .eff_box .box_text a.bt {
@@ -401,7 +404,7 @@ body.active #section1 .sec1 .detail {opacity: 1;}
 	font-size: 10px; font-weight: bold; letter-spacing: 1px;
 }
 
-.sec4 .eff_box .code_box {width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 620px; transition: all .5s ease; position: relative; background: radial-gradient(ellipse at center, rgb(255, 254, 241) 0%, rgb(243, 242, 237) 35%, #1845501a 100%); overflow: hidden;}
+.sec4 .eff_box .code_box {width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 64vh; transition: all .5s ease; position: relative; background: radial-gradient(ellipse at center, rgb(255, 254, 241) 0%, rgb(243, 242, 237) 35%, #1845501a 100%); overflow: hidden;}
 
 /* eff01 - wave animation */
 .eff_box.eff01 .ocean {width:100%; height: 100%;}
