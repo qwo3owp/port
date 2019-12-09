@@ -763,5 +763,6 @@ body.active #section1 .sec1 .detail {opacity: 1;}
 /* 미디어쿼리 */
 @media (max-width: 1634px) {
 	#section1 {height: 3919px;}
+	#section4 {height: calc(4600.2px + 100vh);}
 
 }
