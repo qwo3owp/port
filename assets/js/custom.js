@@ -24,6 +24,16 @@ $('.btn_wrap').click(function(){
 
 });
 
+//메뉴 이동 자연스럽
+$('a[href^="#"]').click(function(){
+	$('#nav').removeClass('on');
+	var target = $($(this).attr('href'));
+	$('html,body').animate({
+		scrollTop:target.offset().top 
+	},600);
+});
+
+
 //eff06 - mouse animation
 
 let wrapper = document.querySelector('.eff06 .code_box');
