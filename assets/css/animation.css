@@ -30,9 +30,7 @@
 	text-align: center;  background-image: url("https://www.dropbox.com/s/ac9efh6oqu3docb/stars.png?raw=1");
 	background-size: 400px auto;
 	-webkit-text-fill-color: transparent;
-	text-fill-color: transparent;
 	-webkit-background-clip: text;
-	background-clip: text;
 	animation: snow 3s infinite linear;
 	font-family: 'Teko', sans-serif; 
 }
