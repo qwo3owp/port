@@ -183,7 +183,7 @@ body.active #nav.on .btn_wrap{transform: translateX(calc(35vw - 60px));}
 .sec1 .detail .imgbox {width: 100%; break-after: column; margin-bottom: 8%;}
 
 /* sec1 - Animation */
-#section1 .motion {opacity: 0; transition: opacity 0.3s 2.2s ease;}
+#section1 .motion {opacity: 0; transform: rotate(-180deg); transition: opacity 0.3s 2.2s ease;}
 .sec1 .sTitle {opacity: 0; transform: translateY(30px); transition: all 0.38s 2.5s cubic-bezier(0, 1.04, 0.58, 1.05);}
 .sec1 .mTitle span {opacity: 0; transform: translateY(450px); transition: all .5s 2.7s ease-in-out;}
 .sec1 .info {opacity: 0; transform: translateY(70px); transition: all 0.38s 3.4s cubic-bezier(0, 1.04, 0.58, 1.05);}
