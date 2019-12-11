@@ -281,7 +281,7 @@ body.active #section1 .sec1 .detail {opacity: 1;}
 	width: 436px; padding-bottom: 21%; color: #fff; font-size: 15px; 
 	line-height: 26px; font-family: 'S-CoreDream-2ExtraLight';
 }
-.sec3 .left_box a {letter-spacing: 1px; color: #fff; display: block;
+.sec3 .left_box a {letter-spacing: 2px; color: #fff; display: block;
 	position: relative; height: 50px; width: 190px; line-height: 50px;
 	text-align: center;font-size: 14px; z-index: 2; overflow: hidden;
 	transition: .01s .23s ease-out all;
