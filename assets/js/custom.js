@@ -3,11 +3,13 @@ $(function(){
 	counter();
 });
 
+
 //skrollr
 var s = skrollr.init({
-	edgeStrategy: 'set',
-	easing: 'linear'
+    edgeStrategy: 'set',
+    easing: 'linear'
 });
+
 
 //loading
 var inputs = $(".loading-bar").find($("p") );
@@ -22,6 +24,11 @@ for(var i =0 ; i< inputs.length; i ++)
 $('.btn_wrap').click(function(){
 	$('#nav').toggleClass('on');
 
+});
+
+//invert
+$('.invert').click(function(){
+	$('body').toggleClass('invert');
 });
 
 //메뉴 이동 자연스럽
@@ -97,8 +104,47 @@ $(window).scroll(function(){
 	if(wScroll > $("#section6").offset().top - $(window).height()/2 ){
 		$("#section6").addClass("show");
 		$("#footer").addClass("show");
+        
 	}
+    
+    //#section4 고정
+    if(wScroll > $("#section4").offset().top){
+        $(".sec4").css( "position", "fixed" );
+    }else {
+        $(".sec4").css( "position", "relative" );
+    }
+    if(wScroll > $("#section5").offset().top - $(window).height() ){
+        $(".sec4").css( "position", "relative" );
+        $(".sec4").css( "top", "4400px" );
+    }else {
+        $(".sec4").css( "top", "0px" );
+    }
+    
+    //#section5 고정
+    if(wScroll > $("#section5").offset().top){
+        $("#section5 .container").css( "position", "fixed" );
+    }else {
+        $("#section5 .container").css( "position", "relative" );
+    }
+    if(wScroll > $("#section6").offset().top - $(window).height() ){
+        $("#section5 .container").css( "position", "relative" );
+        $("#section5 .container").css( "top", "1500px");
+    }else {
+        $("#section5 .container").css( "top", "0px" );
+    }
 
+});
+
+//data값 없애기
+$(window).resize(function(){
+    var wWidth = $(window).width();
+    //화면 크기가 960 이상일 때 style="display:none" 삭제
+    if(wWidth < 1200){
+        $(".motion").removeAttr("data");
+        $(".motion").removeAttr("data-2000");
+        $(".motion").removeAttr("data-2000.1");
+        $(".motion").removeAttr("style");
+    }
 });
 
 
