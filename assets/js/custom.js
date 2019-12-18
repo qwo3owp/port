@@ -3,11 +3,13 @@ $(function(){
 	counter();
 });
 
+
 //skrollr
 var s = skrollr.init({
-	edgeStrategy: 'set',
-	easing: 'linear'
+    edgeStrategy: 'set',
+    easing: 'linear'
 });
+
 
 //loading
 var inputs = $(".loading-bar").find($("p") );
@@ -22,6 +24,11 @@ for(var i =0 ; i< inputs.length; i ++)
 $('.btn_wrap').click(function(){
 	$('#nav').toggleClass('on');
 
+});
+
+//invert
+$('.invert').click(function(){
+	$('body').toggleClass('invert');
 });
 
 //메뉴 이동 자연스럽
@@ -69,7 +76,8 @@ $(window).scroll(function(){
 	if(wScroll > $("#section2").offset().top - $(window).height()/2 ){
 		$("#section2").addClass("show");
 	}
-
+	
+	
 	if(wScroll > $(".sec3 .right_box > div").eq(0).offset().top + $(window).height()/3 ){
 		$("#section3 .box01").fadeOut(500);
 	}else {
@@ -97,8 +105,65 @@ $(window).scroll(function(){
 	if(wScroll > $("#section6").offset().top - $(window).height()/2 ){
 		$("#section6").addClass("show");
 		$("#footer").addClass("show");
+        
 	}
+    
+    //#section4
+    if(wScroll > $("#section4").offset().top){
+        $(".sec4").css( "position", "fixed" );
+    }else {
+        $(".sec4").css( "position", "relative" );
+    }
+    if(wScroll > $("#section5").offset().top - $(window).height() ){
+        $(".sec4").css( "position", "relative" );
+        $(".sec4").css( "top", "4400px" );
+    }else {
+        $(".sec4").css( "top", "0px" );
+    }
+	
+	if(wScroll > $("#section4").offset().top - $(window).height()/2 ){
+		$(".sec4_m").addClass("show");
+	}
+    
+    //#section5
+    if(wScroll > $("#section5").offset().top){
+		$(".sec5").css( "position", "fixed" );
+    }else {
+		$(".sec5").css( "position", "relative" );
+    }
+    if(wScroll > $("#section6").offset().top - $(window).height() ){
+		$(".sec5").css( "position", "relative" );
+		$(".sec5").css( "top", "1500px");
+    }else {
+		$(".sec5").css( "top", "0px" );
+    }
 
+});
+
+$(window).resize(function() {
+	if ($(window).width() >= 1024){ /* 피씨 화면 */
+		$('.motion').css('display', 'block');
+		$('.motion2').css('display', 'none');
+		$('.sec3').css('display', 'block');
+		$('.sec3_m').css('display', 'none');
+		$('.sec4').css('display', 'block');
+		$('.sec4_m').css('display', 'none');
+		$('.sec5').css('display', 'block');
+		$('.sec5_m').css('display', 'none');
+		skrollr.init();
+
+	} else if (($(window).width() <= 1024)){  /* 모바일 화면 */
+		skrollr.init().destroy();
+		$('.motion').css('display', 'none');
+		$('.motion2').css('display', 'block');
+		$('.sec3').css('display', 'none');
+		$('.sec3_m').css('display', 'block');
+		$('.sec4').css('display', 'none');
+		$('.sec4_m').css('display', 'block');
+		$('.sec5').css('display', 'none');
+		$('.sec5_m').css('display', 'block');
+		
+	}
 });
 
 
