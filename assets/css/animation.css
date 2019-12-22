@@ -184,7 +184,7 @@
 	position: absolute; left: 8%; width: 40%; height: 30%;
 	top: 0; display: flex; justify-content: space-around; align-items: center;
 }
-.eff_box.eff05 i {
+.eff_box.eff05 .card i {
 	opacity: 0; font-size: 18px; color: #fff;
 	transform: scale(0.1); transition: all 0.2s ease;
 }
