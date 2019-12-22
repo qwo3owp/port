@@ -76,7 +76,8 @@ $(window).scroll(function(){
 	if(wScroll > $("#section2").offset().top - $(window).height()/2 ){
 		$("#section2").addClass("show");
 	}
-
+	
+	
 	if(wScroll > $(".sec3 .right_box > div").eq(0).offset().top + $(window).height()/3 ){
 		$("#section3 .box01").fadeOut(500);
 	}else {
@@ -107,7 +108,7 @@ $(window).scroll(function(){
         
 	}
     
-    //#section4 고정
+    //#section4
     if(wScroll > $("#section4").offset().top){
         $(".sec4").css( "position", "fixed" );
     }else {
@@ -119,32 +120,50 @@ $(window).scroll(function(){
     }else {
         $(".sec4").css( "top", "0px" );
     }
+	
+	if(wScroll > $("#section4").offset().top - $(window).height()/2 ){
+		$(".sec4_m").addClass("show");
+	}
     
-    //#section5 고정
+    //#section5
     if(wScroll > $("#section5").offset().top){
-        $("#section5 .container").css( "position", "fixed" );
+		$(".sec5").css( "position", "fixed" );
     }else {
-        $("#section5 .container").css( "position", "relative" );
+		$(".sec5").css( "position", "relative" );
     }
     if(wScroll > $("#section6").offset().top - $(window).height() ){
-        $("#section5 .container").css( "position", "relative" );
-        $("#section5 .container").css( "top", "1500px");
+		$(".sec5").css( "position", "relative" );
+		$(".sec5").css( "top", "1500px");
     }else {
-        $("#section5 .container").css( "top", "0px" );
+		$(".sec5").css( "top", "0px" );
     }
 
 });
 
-//data값 없애기
-$(window).resize(function(){
-    var wWidth = $(window).width();
-    //화면 크기가 960 이상일 때 style="display:none" 삭제
-    if(wWidth < 1200){
-        $(".motion").removeAttr("data");
-        $(".motion").removeAttr("data-2000");
-        $(".motion").removeAttr("data-2000.1");
-        $(".motion").removeAttr("style");
-    }
+$(window).resize(function() {
+	if ($(window).width() >= 1024){ /* 피씨 화면 */
+		$('.motion').css('display', 'block');
+		$('.motion2').css('display', 'none');
+		$('.sec3').css('display', 'block');
+		$('.sec3_m').css('display', 'none');
+		$('.sec4').css('display', 'block');
+		$('.sec4_m').css('display', 'none');
+		$('.sec5').css('display', 'block');
+		$('.sec5_m').css('display', 'none');
+		skrollr.init();
+
+	} else if (($(window).width() <= 1024)){  /* 모바일 화면 */
+		skrollr.init().destroy();
+		$('.motion').css('display', 'none');
+		$('.motion2').css('display', 'block');
+		$('.sec3').css('display', 'none');
+		$('.sec3_m').css('display', 'block');
+		$('.sec4').css('display', 'none');
+		$('.sec4_m').css('display', 'block');
+		$('.sec5').css('display', 'none');
+		$('.sec5_m').css('display', 'block');
+		
+	}
 });
 
 
